@@ -2,8 +2,8 @@
     "version": "https://jsonfeed.org/version/1",
     "title": "Yusuf Azeem Portfolio",
     "description": "",
-    "home_page_url": "https://github.com/yusufazeem/portfolio-site",
-    "feed_url": "https://github.com/yusufazeem/portfolio-site/feed.json",
+    "home_page_url": "https://yusufazeem.com",
+    "feed_url": "https://yusufazeem.com/feed.json",
     "user_comment": "",
     "author": {
         "name": "Yusuf Azeem"
