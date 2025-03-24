@@ -1,10 +1,11 @@
 {
     "version": "https://jsonfeed.org/version/1",
-    "title": "Yusuf Azeem Portfolio",
+    "title": "Yusuf Azeem",
     "description": "",
     "home_page_url": "https://yusufazeem.com",
     "feed_url": "https://yusufazeem.com/feed.json",
     "user_comment": "",
+    "icon": "https://yusufazeem.com/media/website/cyber-banner-2.jpg",
     "author": {
         "name": "Yusuf Azeem"
     },
