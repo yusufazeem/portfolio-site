@@ -3,12 +3,126 @@
     <title>Yusuf Azeem</title>
     <link href="https://yusufazeem.com/feed.xml" rel="self" />
     <link href="https://yusufazeem.com" />
-    <updated>2025-04-09T14:59:41-04:00</updated>
+    <updated>2025-04-09T16:35:13-04:00</updated>
     <author>
         <name>Yusuf Azeem</name>
     </author>
     <id>https://yusufazeem.com</id>
 
+    <entry>
+        <title>Security Operation Lab</title>
+        <author>
+            <name>Yusuf Azeem</name>
+        </author>
+        <link href="https://yusufazeem.com/security-operation-lab.html"/>
+        <id>https://yusufazeem.com/security-operation-lab.html</id>
+
+        <updated>2025-04-09T16:28:36-04:00</updated>
+            <summary>
+                <![CDATA[
+                    📊 30-Days DFIR Lab: Centralized Logging with Elastic Stack In this lab, I designed and deployed a centralized log collection and alerting architecture for blue-team and detection engineering practice. Subnet: 192.168.100.0/24 Range: 192.168.100.1 – 254 Hypervisor: Proxmox VE _Elastic dashboard, Fleet agent overview, triggered alerts…&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <h3 id="📊-30-days-dfir-lab-centralized-logging-with-elastic-stack">📊 30-Days DFIR Lab: Centralized Logging with Elastic Stack</h3>
+<p>In this lab, I designed and deployed a centralized <strong>log collection and alerting architecture</strong> for blue-team and detection engineering practice.</p><h4 id="🧠-lab-overview">🧠 Lab Overview</h4>
+<figure class="post__image"><img loading="lazy" src="https://yusufazeem.com/media/posts/20/30days-Mydfir.drawio.png" alt="Image description" width="793" height="581"  sizes="(max-width: 1920px) 100vw, 1920px" srcset="https://yusufazeem.com/media/posts/20/responsive/30days-Mydfir.drawio-xs.png 640w ,https://yusufazeem.com/media/posts/20/responsive/30days-Mydfir.drawio-sm.png 768w ,https://yusufazeem.com/media/posts/20/responsive/30days-Mydfir.drawio-md.png 1024w ,https://yusufazeem.com/media/posts/20/responsive/30days-Mydfir.drawio-lg.png 1366w ,https://yusufazeem.com/media/posts/20/responsive/30days-Mydfir.drawio-xl.png 1600w ,https://yusufazeem.com/media/posts/20/responsive/30days-Mydfir.drawio-2xl.png 1920w"></figure><ul>
+<li><strong>Objective:</strong> Collect logs across Windows and Linux systems, forward to ELK stack, visualize with Kibana, and trigger alerts.</li>
+<li><strong>Focus Areas:</strong>  <ul>
+<li>DFIR readiness  </li>
+<li>Endpoint visibility  </li>
+<li>Threat detection  </li>
+<li>OSINT &amp; alert integration</li>
+</ul>
+</li>
+</ul>
+<h4 id="🖥️-network--architecture">🖥️ Network &amp; Architecture</h4>
+<blockquote>
+<p><strong>Subnet:</strong> <code>192.168.100.0/24</code><br><strong>Range:</strong> <code>192.168.100.1 – 254</code><br><strong>Hypervisor:</strong> Proxmox VE</p></blockquote>
+<h4 id="🧰-lab-components">🧰 Lab Components</h4>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Proxmox</strong></td>
+<td>Hypervisor for spinning up all VMs</td>
+</tr>
+<tr>
+<td><strong>Fleet Server</strong></td>
+<td>Agent orchestration</td>
+</tr>
+<tr>
+<td><strong>Elastic Stack</strong></td>
+<td>Elasticsearch + Kibana for analysis</td>
+</tr>
+<tr>
+<td><strong>Windows Server</strong></td>
+<td>Forwarding logs via Elastic Agent (RDP)</td>
+</tr>
+<tr>
+<td><strong>Ubuntu Server</strong></td>
+<td>Forwarding logs via Elastic Agent (SSH)</td>
+</tr>
+<tr>
+<td><strong>OS Ticketing</strong></td>
+<td>Receives alerts from Elastic</td>
+</tr>
+<tr>
+<td><strong>Kali Linux</strong></td>
+<td>Simulates attacker traffic from outside</td>
+</tr>
+</tbody></table>
+<h4 id="🔁-workflow">🔁 Workflow</h4>
+<ol>
+<li>🖥️ Fleet agents installed on both Windows + Ubuntu endpoints</li>
+<li>📦 Logs forwarded to <strong>ElasticSearch</strong></li>
+<li>📈 Visualized via <strong>Kibana dashboard</strong></li>
+<li>🚨 Alerts generated and routed to <strong>OS Ticketing System</strong></li>
+<li>🧪 Simulated attacker activities via <strong>Kali Linux</strong></li>
+</ol>
+<h4 id="🔐-security-focus">🔐 Security Focus</h4>
+<ul>
+<li>Event monitoring (Sysmon, auditd)</li>
+<li>Inbound SSH &amp; RDP logging</li>
+<li>Alerting via Elastic rules</li>
+<li>Incident triage through ticketing</li>
+</ul>
+<h5 id="📸-screenshots">📸 Screenshots</h5>
+<blockquote>
+<p>_Elastic dashboard, Fleet agent overview, triggered alerts…
+<figure class="post__image"><img loading="lazy" src="https://yusufazeem.com/media/posts/20/Home-Elasticsearch.png" alt="Image description" width="1909" height="986"  sizes="(max-width: 1920px) 100vw, 1920px" srcset="https://yusufazeem.com/media/posts/20/responsive/Home-Elasticsearch-xs.png 640w ,https://yusufazeem.com/media/posts/20/responsive/Home-Elasticsearch-sm.png 768w ,https://yusufazeem.com/media/posts/20/responsive/Home-Elasticsearch-md.png 1024w ,https://yusufazeem.com/media/posts/20/responsive/Home-Elasticsearch-lg.png 1366w ,https://yusufazeem.com/media/posts/20/responsive/Home-Elasticsearch-xl.png 1600w ,https://yusufazeem.com/media/posts/20/responsive/Home-Elasticsearch-2xl.png 1920w"></figure></p></blockquote>
+<h4 id="🚀-tools-used">🚀 Tools Used</h4>
+<ul>
+<li>🔧 Proxmox VE</li>
+<li>📊 ELK Stack (ElasticSearch + Kibana)</li>
+<li>📦 Fleet server</li>
+<li>💻 Windows 2019 (with Elastic Agent)</li>
+<li>🐧 Ubuntu Server (with SSH + logging)</li>
+<li>🧪 Kali Linux (Attacker simulation)</li>
+<li>📬 OS Ticket</li>
+</ul>
+<h4 id="🗒️-notes">🗒️ Notes</h4>
+<ul>
+<li>Elastic Agent enrollment required manual token setup</li>
+<li>Fleet provides visual heartbeat of all connected agents</li>
+<li>Custom rules used to detect suspicious logon behavior</li>
+</ul>
+<h4 id="✅-what-i-learned">✅ What I Learned</h4>
+<ul>
+<li>How to create a full log pipeline from scratch</li>
+<li>DFIR alerting in a home lab context</li>
+<li>Elastic detection rules &amp; correlation</li>
+<li>Mapping alerts to real attacker TTPs</li>
+</ul>
+
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Windows Active Directory - Home-Lab </title>
         <author>
@@ -233,7 +347,7 @@
             </summary>
         <content type="html">
             <![CDATA[
-                <p>A transparent firewall setup using OPNsense in <strong>bridge mode</strong>, designed to filter traffic without interfering with existing IP addressing. Ideal for lab testing red/blue team scenarios and monitoring internal network behavior.</p><h2 id="🔧-setup-overview">🔧 Setup Overview</h2>
+                <p>A transparent firewall setup using OPNsense in <strong>bridge mode</strong>, designed to filter traffic without interfering with existing IP addressing. Ideal for lab testing red/blue team scenarios and monitoring internal network behavior.</p><h3 id="🔧-setup-overview">🔧 Setup Overview</h3>
 <ul>
 <li><strong>Firewall Mode</strong>: Transparent Bridge (Layer 2)</li>
 <li><strong>Hypervisor</strong>: Proxmox</li>
@@ -244,7 +358,7 @@
 </li>
 <li><strong>Management</strong>: Web UI via Virtual IP (e.g., 192.168.1.5)</li>
 </ul>
-<h2 id="💻-lab-hardware">💻 Lab Hardware</h2>
+<h4 id="💻-lab-hardware">💻 Lab Hardware</h4>
 <ul>
 <li>🔧 <strong>OPNsense Host</strong>: Dell OptiPlex 9020 SFF  <ul>
 <li>Intel Core i5-4570 @ 3.2GHz, 8GB RAM, 250GB HDD</li>
@@ -256,10 +370,10 @@
 </li>
 <li>🌐 <strong>Remote Access</strong>: MobaXterm (SSH/VNC)</li>
 </ul>
-<h2 id="📸-screenshots">📸 Screenshots</h2>
+<h4 id="📸-screenshots">📸 Screenshots</h4>
 <blockquote>
 <p><em>(Add screenshots here: OPNsense dashboard, firewall rules, logs, etc.)</em></p></blockquote>
-<h2 id="🧪-lab-equipment">🧪 Lab Equipment</h2>
+<h4 id="🧪-lab-equipment">🧪 Lab Equipment</h4>
 <ul>
 <li>🖥️ <strong>Host</strong>: Windows 11</li>
 <li>🌐 <strong>VMs</strong>:<ul>
@@ -269,7 +383,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="⚙️-key-features">⚙️ Key Features</h2>
+<h4 id="⚙️-key-features">⚙️ Key Features</h4>
 <ul>
 <li>IDS/IPS with Suricata</li>
 <li>GeoIP Blocking</li>
@@ -277,19 +391,19 @@
 <li>Logging + Insight with ELK (optional)</li>
 <li>In-line monitoring of real traffic</li>
 </ul>
-<h2 id="🧠-skills-practiced">🧠 Skills Practiced</h2>
+<h4 id="🧠-skills-practiced">🧠 Skills Practiced</h4>
 <ul>
 <li>Network segmentation &amp; inspection</li>
 <li>Transparent firewall concepts</li>
 <li>Alert tuning and threat detection</li>
 <li>Troubleshooting network flows</li>
 </ul>
-<h2 id="🔗-resources">🔗 Resources</h2>
+<h4 id="🔗-resources">🔗 Resources</h4>
 <ul>
 <li><a href="#">GitHub Lab Setup Guide</a> </li>
 <li><a href="https://docs.opnsense.org/">OPNsense Documentation</a></li>
 </ul>
-<h2 id="📌-tags">📌 Tags</h2>
+<h4 id="📌-tags">📌 Tags</h4>
 <p><code>#portfolio</code> <code>#network-security</code> <code>#opnsense</code> <code>#homelab</code> <code>#firewall</code></p>
             ]]>
         </content>

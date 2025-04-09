@@ -18,7 +18,7 @@
 </url>
 <url>
 <loc>https://yusufazeem.com/opnsense-transparent-firewall-lab.html</loc>
-<lastmod>2025-04-09T14:59:41-04:00</lastmod>
+<lastmod>2025-04-09T16:18:54-04:00</lastmod>
 </url>
 <url>
 <loc>https://yusufazeem.com/projects.html</loc>
@@ -27,6 +27,18 @@
 <url>
 <loc>https://yusufazeem.com/resume.html</loc>
 <lastmod>2025-03-24T10:36:50-04:00</lastmod>
+</url>
+<url>
+<loc>https://yusufazeem.com/security-operation-lab.html</loc>
+<lastmod>2025-04-09T16:35:13-04:00</lastmod>
+<image:image>
+<image:loc>https://yusufazeem.com/media/posts/20/30days-Mydfir.drawio.png</image:loc>
+<image:title><![CDATA[Image description]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://yusufazeem.com/media/posts/20/Home-Elasticsearch.png</image:loc>
+<image:title><![CDATA[Image description]]></image:title>
+</image:image>
 </url>
 <url>
 <loc>https://yusufazeem.com/transparent-firewall-with-opnsense-on-proxmox.html</loc>
