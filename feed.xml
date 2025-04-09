@@ -3,51 +3,12 @@
     <title>Yusuf Azeem</title>
     <link href="https://yusufazeem.com/feed.xml" rel="self" />
     <link href="https://yusufazeem.com" />
-    <updated>2025-04-09T13:56:32-04:00</updated>
+    <updated>2025-04-09T14:59:41-04:00</updated>
     <author>
         <name>Yusuf Azeem</name>
     </author>
     <id>https://yusufazeem.com</id>
 
-    <entry>
-        <title>Tests</title>
-        <author>
-            <name>Yusuf Azeem</name>
-        </author>
-        <link href="https://yusufazeem.com/tests.html"/>
-        <id>https://yusufazeem.com/tests.html</id>
-
-        <updated>2025-04-09T13:55:20-04:00</updated>
-            <summary></summary>
-        <content type="html">
-            <![CDATA[
-                <script src="https://gist.github.com/yourusername/gistid.js"></script>
-
-<meta name="description" content="How I deployed Active Directory on Windows Server 2022 using Proxmox and Cloudflare Pages.">
-
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>Test</title>
-        <author>
-            <name>Yusuf Azeem</name>
-        </author>
-        <link href="https://yusufazeem.com/test.html"/>
-        <id>https://yusufazeem.com/test.html</id>
-
-        <updated>2025-04-09T13:37:25-04:00</updated>
-            <summary>
-                <![CDATA[
-                    ![Windows-server-2022 ](https://yusufazeem.com/media/files/Proxmox Virtual Environment Windows server 2022)
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <p>![Windows-server-2022 ](https://yusufazeem.com/media/files/Proxmox Virtual Environment Windows server 2022)</p>
-            ]]>
-        </content>
-    </entry>
     <entry>
         <title>Windows Active Directory - Home-Lab </title>
         <author>
@@ -257,7 +218,7 @@
         </content>
     </entry>
     <entry>
-        <title># 🛡️ OPNsense Transparent Firewall Lab</title>
+        <title>🛡️ OPNsense Transparent Firewall Lab</title>
         <author>
             <name>Yusuf Azeem</name>
         </author>

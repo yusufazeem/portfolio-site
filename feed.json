@@ -5,38 +5,11 @@
     "home_page_url": "https://yusufazeem.com",
     "feed_url": "https://yusufazeem.com/feed.json",
     "user_comment": "",
-    "icon": "https://yusufazeem.com/media/website/cyber-banner-2.jpg",
+    "icon": "https://yusufazeem.com/media/website/logo-without-text-removebg.png",
     "author": {
         "name": "Yusuf Azeem"
     },
     "items": [
-        {
-            "id": "https://yusufazeem.com/tests.html",
-            "url": "https://yusufazeem.com/tests.html",
-            "title": "Tests",
-            "content_html": "<script src=\"https://gist.github.com/yourusername/gistid.js\"></script>\n\n<meta name=\"description\" content=\"How I deployed Active Directory on Windows Server 2022 using Proxmox and Cloudflare Pages.\">\n",
-            "author": {
-                "name": "Yusuf Azeem"
-            },
-            "tags": [
-            ],
-            "date_published": "2025-04-09T13:55:20-04:00",
-            "date_modified": "2025-04-09T13:56:32-04:00"
-        },
-        {
-            "id": "https://yusufazeem.com/test.html",
-            "url": "https://yusufazeem.com/test.html",
-            "title": "Test",
-            "summary": "![Windows-server-2022 ](https://yusufazeem.com/media/files/Proxmox Virtual Environment Windows server 2022)",
-            "content_html": "<p>![Windows-server-2022 ](https://yusufazeem.com/media/files/Proxmox Virtual Environment Windows server 2022)</p>",
-            "author": {
-                "name": "Yusuf Azeem"
-            },
-            "tags": [
-            ],
-            "date_published": "2025-04-09T13:37:25-04:00",
-            "date_modified": "2025-04-09T13:37:25-04:00"
-        },
         {
             "id": "https://yusufazeem.com/windows-active-directory-home-lab.html",
             "url": "https://yusufazeem.com/windows-active-directory-home-lab.html",
@@ -68,7 +41,7 @@
         {
             "id": "https://yusufazeem.com/opnsense-transparent-firewall-lab.html",
             "url": "https://yusufazeem.com/opnsense-transparent-firewall-lab.html",
-            "title": "# 🛡️ OPNsense Transparent Firewall Lab",
+            "title": "🛡️ OPNsense Transparent Firewall Lab",
             "summary": "A transparent firewall setup using OPNsense in bridge mode, designed to filter traffic without interfering with existing IP addressing. Ideal for lab testing red/blue team scenarios and monitoring internal network behavior. (Add screenshots here: OPNsense dashboard, firewall rules, logs, etc.) #portfolio #network-security #opnsense #homelab #firewall",
             "content_html": "<p>A transparent firewall setup using OPNsense in <strong>bridge mode</strong>, designed to filter traffic without interfering with existing IP addressing. Ideal for lab testing red/blue team scenarios and monitoring internal network behavior.</p><h2 id=\"🔧-setup-overview\">🔧 Setup Overview</h2>\n<ul>\n<li><strong>Firewall Mode</strong>: Transparent Bridge (Layer 2)</li>\n<li><strong>Hypervisor</strong>: Proxmox</li>\n<li><strong>Interfaces</strong>:<ul>\n<li>WAN: bridged to external internet</li>\n<li>LAN: bridged to internal lab VM network</li>\n</ul>\n</li>\n<li><strong>Management</strong>: Web UI via Virtual IP (e.g., 192.168.1.5)</li>\n</ul>\n<h2 id=\"💻-lab-hardware\">💻 Lab Hardware</h2>\n<ul>\n<li>🔧 <strong>OPNsense Host</strong>: Dell OptiPlex 9020 SFF  <ul>\n<li>Intel Core i5-4570 @ 3.2GHz, 8GB RAM, 250GB HDD</li>\n</ul>\n</li>\n<li>🖥️ <strong>Proxmox Server</strong>: Dell PowerEdge R630 (bare metal)<ul>\n<li>Used to host lab VMs: Kali, Windows, Splunk, etc.</li>\n</ul>\n</li>\n<li>🌐 <strong>Remote Access</strong>: MobaXterm (SSH/VNC)</li>\n</ul>\n<h2 id=\"📸-screenshots\">📸 Screenshots</h2>\n<blockquote>\n<p><em>(Add screenshots here: OPNsense dashboard, firewall rules, logs, etc.)</em></p></blockquote>\n<h2 id=\"🧪-lab-equipment\">🧪 Lab Equipment</h2>\n<ul>\n<li>🖥️ <strong>Host</strong>: Windows 11</li>\n<li>🌐 <strong>VMs</strong>:<ul>\n<li>Kali Linux (Attacker)</li>\n<li>Windows 10 (Victim)</li>\n<li>OPNsense (Firewall)</li>\n</ul>\n</li>\n</ul>\n<h2 id=\"⚙️-key-features\">⚙️ Key Features</h2>\n<ul>\n<li>IDS/IPS with Suricata</li>\n<li>GeoIP Blocking</li>\n<li>VLAN-aware filtering</li>\n<li>Logging + Insight with ELK (optional)</li>\n<li>In-line monitoring of real traffic</li>\n</ul>\n<h2 id=\"🧠-skills-practiced\">🧠 Skills Practiced</h2>\n<ul>\n<li>Network segmentation &amp; inspection</li>\n<li>Transparent firewall concepts</li>\n<li>Alert tuning and threat detection</li>\n<li>Troubleshooting network flows</li>\n</ul>\n<h2 id=\"🔗-resources\">🔗 Resources</h2>\n<ul>\n<li><a href=\"#\">GitHub Lab Setup Guide</a> </li>\n<li><a href=\"https://docs.opnsense.org/\">OPNsense Documentation</a></li>\n</ul>\n<h2 id=\"📌-tags\">📌 Tags</h2>\n<p><code>#portfolio</code> <code>#network-security</code> <code>#opnsense</code> <code>#homelab</code> <code>#firewall</code></p>",
             "author": {
@@ -77,7 +50,7 @@
             "tags": [
             ],
             "date_published": "2025-03-25T09:13:39-04:00",
-            "date_modified": "2025-03-25T10:08:46-04:00"
+            "date_modified": "2025-04-09T14:59:41-04:00"
         }
     ]
 }
