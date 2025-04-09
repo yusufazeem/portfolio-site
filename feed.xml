@@ -3,10 +3,334 @@
     <title>Yusuf Azeem</title>
     <link href="https://yusufazeem.com/feed.xml" rel="self" />
     <link href="https://yusufazeem.com" />
-    <updated>1969-12-31T19:00:00-05:00</updated>
+    <updated>2025-04-09T13:56:32-04:00</updated>
     <author>
         <name>Yusuf Azeem</name>
     </author>
     <id>https://yusufazeem.com</id>
 
+    <entry>
+        <title>Tests</title>
+        <author>
+            <name>Yusuf Azeem</name>
+        </author>
+        <link href="https://yusufazeem.com/tests.html"/>
+        <id>https://yusufazeem.com/tests.html</id>
+
+        <updated>2025-04-09T13:55:20-04:00</updated>
+            <summary></summary>
+        <content type="html">
+            <![CDATA[
+                <script src="https://gist.github.com/yourusername/gistid.js"></script>
+
+<meta name="description" content="How I deployed Active Directory on Windows Server 2022 using Proxmox and Cloudflare Pages.">
+
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Test</title>
+        <author>
+            <name>Yusuf Azeem</name>
+        </author>
+        <link href="https://yusufazeem.com/test.html"/>
+        <id>https://yusufazeem.com/test.html</id>
+
+        <updated>2025-04-09T13:37:25-04:00</updated>
+            <summary>
+                <![CDATA[
+                    ![Windows-server-2022 ](https://yusufazeem.com/media/files/Proxmox Virtual Environment Windows server 2022)
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>![Windows-server-2022 ](https://yusufazeem.com/media/files/Proxmox Virtual Environment Windows server 2022)</p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Windows Active Directory - Home-Lab </title>
+        <author>
+            <name>Yusuf Azeem</name>
+        </author>
+        <link href="https://yusufazeem.com/windows-active-directory-home-lab.html"/>
+        <id>https://yusufazeem.com/windows-active-directory-home-lab.html</id>
+
+        <updated>2025-04-09T13:04:45-04:00</updated>
+            <summary>
+                <![CDATA[
+                    🛠️ Setting Up Active Directory on Windows Server 2022 (Proxmox + PowerEdge) As part of my homelab running on a Dell PowerEdge R630 with Proxmox, I provisioned a fully functional Active Directory Domain Services (AD DS) environment using Windows Server 2022. This guide walks through&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <h2 id="🛠️-setting-up-active-directory-on-windows-server-2022-proxmox--poweredge">🛠️ Setting Up Active Directory on Windows Server 2022 (Proxmox + PowerEdge)</h2>
+<p>As part of my homelab running on a <strong>Dell PowerEdge R630</strong> with <strong>Proxmox</strong>, I provisioned a fully functional <strong>Active Directory Domain Services (AD DS)</strong> environment using <strong>Windows Server 2022</strong>. This guide walks through the full setup process, which is perfect for both labs and small business deployments.</p><figure class="post__image"><img loading="lazy" src="https://yusufazeem.com/media/posts/14/ad-setup-step1.png" alt="Image description" width="1914" height="987"  sizes="(max-width: 1920px) 100vw, 1920px" srcset="https://yusufazeem.com/media/posts/14/responsive/ad-setup-step1-xs.png 640w ,https://yusufazeem.com/media/posts/14/responsive/ad-setup-step1-sm.png 768w ,https://yusufazeem.com/media/posts/14/responsive/ad-setup-step1-md.png 1024w ,https://yusufazeem.com/media/posts/14/responsive/ad-setup-step1-lg.png 1366w ,https://yusufazeem.com/media/posts/14/responsive/ad-setup-step1-xl.png 1600w ,https://yusufazeem.com/media/posts/14/responsive/ad-setup-step1-2xl.png 1920w"></figure><p> 💡 Deployed in a VM on Proxmox, published this guide using <strong>Publii</strong>, and hosted it on <strong>Cloudflare Pages via GitHub</strong>.</p><h3 id="🔧-prerequisites">🔧 Prerequisites</h3>
+<ul>
+<li>Proxmox VM with Windows Server 2022 (4 vCPU, 8GB+ RAM)</li>
+<li>Static IP (e.g., <code>192.168.1.10</code>)</li>
+<li>Hostname set (e.g., <code>DC01</code>)</li>
+<li>Internet access for updates</li>
+<li>Admin access</li>
+</ul>
+<h3 id="step-1-initial-configuration">Step 1: Initial Configuration</h3>
+<ul>
+<li>Assign a static IP:<ul>
+<li>Go to <code>Settings &gt; Network &gt; Ethernet &gt; Properties</code></li>
+<li>Set IP, subnet, gateway, DNS (temporarily point to Google or local IP)</li>
+</ul>
+</li>
+<li>Rename the server:<pre><code class="language-powershell">Rename-Computer -NewName &quot;DC01&quot; -Restart
+</code></pre>
+</li>
+</ul>
+<h3 id="step-2-install-ad-ds-and-dns-roles">Step 2: Install AD DS and DNS Roles</h3>
+<ul>
+<li>Open <strong>Server Manager</strong></li>
+<li>Click <strong>Add Roles and Features</strong></li>
+<li>Select:<ul>
+<li><strong>Active Directory Domain Services</strong></li>
+<li><strong>DNS Server</strong></li>
+</ul>
+</li>
+<li>Proceed through the wizard and install</li>
+</ul>
+<h3 id="step-3-promote-to-domain-controller">Step 3: Promote to Domain Controller</h3>
+<p>After the role installs:</p><ul>
+<li>Click <strong>“Promote this server to a domain controller”</strong></li>
+<li>Choose:<ul>
+<li><strong>Add a new forest</strong></li>
+<li>Root domain: <code>homelab.local</code></li>
+</ul>
+</li>
+<li>Set DSRM password</li>
+<li>Keep DNS and Global Catalog checked</li>
+<li>Finish and reboot</li>
+</ul>
+<h3 id="step-4-post-install-verification">Step 4: Post-Install Verification</h3>
+<p>After reboot, login as:<br><code>Administrator@homelab.local</code></p><p>Then check:</p><ul>
+<li>✅ ADUC (Active Directory Users and Computers)  </li>
+<li>✅ DNS Manager (<code>homelab.local</code> zone exists)  </li>
+<li>✅ <code>dcdiag</code> returns no major errors</li>
+</ul>
+<h3 id="step-5-join-a-client-to-the-domain">Step 5: Join a Client to the Domain</h3>
+<ul>
+<li>Set client’s DNS to the IP of DC01</li>
+<li>Join the domain (<code>homelab.local</code>)</li>
+<li>Reboot</li>
+<li>Log in with domain credentials</li>
+</ul>
+<h3 id="🧠-pro-tips">🧠 Pro Tips</h3>
+<ul>
+<li>Use <code>gpupdate /force</code> on clients</li>
+<li>Back up the <strong>System State</strong></li>
+<li>Consider adding a second DC for HA</li>
+<li>Create OUs (<code>Users</code>, <code>Computers</code>, <code>Servers</code>) for clean structure</li>
+<li>Create a test user (<code>john.doe</code>) and assign to an OU</li>
+</ul>
+<h3 id="💻-environment-overview">💻 Environment Overview</h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Hypervisor</td>
+<td>Proxmox VE on Dell PowerEdge R630</td>
+</tr>
+<tr>
+<td>OS</td>
+<td>Windows Server 2022 Standard Eval</td>
+</tr>
+<tr>
+<td>AD Domain Name</td>
+<td>homelab.local</td>
+</tr>
+<tr>
+<td>Static IP</td>
+<td>192.168.1.10</td>
+</tr>
+<tr>
+<td>Deployment Stack</td>
+<td>Publii + GitHub + Cloudflare Pages</td>
+</tr>
+</tbody></table>
+<h3 id="🧩-next-steps">🧩 Next Steps</h3>
+<ul>
+<li>Add a second Domain Controller (<code>DC02</code>)</li>
+<li>Create baseline Group Policies</li>
+<li>Integrate file shares, Linux clients, or VPN auth</li>
+</ul>
+<p>Want to see my DNS and Group Policy config? Check the <a href="https://github.com/yusufazeem/homelab-ad">GitHub repo</a> or hit me up on linkedIn / GitHub!</p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Transparent Firewall with OPNsense on Proxmox</title>
+        <author>
+            <name>Yusuf Azeem</name>
+        </author>
+        <link href="https://yusufazeem.com/transparent-firewall-with-opnsense-on-proxmox.html"/>
+        <id>https://yusufazeem.com/transparent-firewall-with-opnsense-on-proxmox.html</id>
+
+        <updated>2025-03-25T11:19:19-04:00</updated>
+            <summary>
+                <![CDATA[
+                    🧱 STEP 1: Create the OPNsense VM in Proxmox 💡 Goal: Install OPNsense with 2 network interfaces in bridge mode. 💡 Use VirtIO or Intel E1000 as NIC model (both work fine) ✅ Once OPNsense is installed and running, we’ll: Then configure bridge setup inside&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <h3 id="🧱-step-1-create-the-opnsense-vm-in-proxmox">🧱 STEP 1: <strong>Create the OPNsense VM in Proxmox</strong></h3>
+<h3 id="💡-goal">💡 Goal:</h3>
+<p>Install OPNsense with 2 network interfaces in bridge mode.</p><h3 id="🛠-what-you-need">🛠 What You Need:</h3>
+<ul>
+<li>✅ OPNsense ISO: <a href="https://opnsense.org/download">https://opnsense.org/download</a></li>
+<li>✅ Proxmox running on PowerEdge server (whatever you have as infrastucture)</li>
+<li>✅ Internet access for ISO download &amp; updates</li>
+</ul>
+<h3 id="🔧-steps">🔧 Steps:</h3>
+<h4 id="🖼️-1-upload-the-opnsense-iso-to-proxmox">🖼️ 1. <strong>Upload the OPNsense ISO to Proxmox</strong></h4>
+<ul>
+<li>Go to <strong>Proxmox Web UI</strong> → <code>local</code> → <code>ISO Images</code> → <strong>Upload</strong></li>
+<li>Upload the OPNsense ISO you downloaded</li>
+</ul>
+<h4 id="🖥️-2-create-the-vm">🖥️ 2. <strong>Create the VM</strong></h4>
+<ul>
+<li>Node → Right-click → <strong>Create VM</strong></li>
+<li>General:<ul>
+<li><strong>Name</strong>: <code>opnsense-fw</code></li>
+</ul>
+</li>
+<li>OS:<ul>
+<li>Use the uploaded <strong>OPNsense ISO</strong></li>
+</ul>
+</li>
+<li>System:<ul>
+<li>BIOS: Default (SeaBIOS)</li>
+<li>Machine: <code>i440fx</code> (or default)</li>
+</ul>
+</li>
+<li>Hard Disk:<ul>
+<li>10–16 GB is enough</li>
+</ul>
+</li>
+<li>CPU:<ul>
+<li>1 core (2 if available)</li>
+</ul>
+</li>
+<li>Memory:<ul>
+<li>1024 MB (1 GB) minimum</li>
+</ul>
+</li>
+<li>Network:<ul>
+<li>Add <strong>2 NICs</strong>, both attached to <strong>bridge interfaces</strong><ul>
+<li>WAN (e.g., <code>vmbr0</code>) connects to your LAN/internet</li>
+<li>LAN (e.g., <code>vmbr1</code>) connects to test VMs</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>💡 Use <code>VirtIO</code> or <code>Intel E1000</code> as NIC model (both work fine)</p></blockquote>
+<h4 id="💾-3-start-the-vm-and-launch-console">💾 3. <strong>Start the VM and Launch Console</strong></h4>
+<ul>
+<li>Boot from ISO</li>
+<li>Choose <strong>Install OPNsense</strong></li>
+<li>Follow the installer steps:<ul>
+<li>Accept defaults</li>
+<li>Password: choose a secure one</li>
+<li>Assign interfaces (usually em0 = WAN, em1 = LAN)</li>
+</ul>
+</li>
+</ul>
+<p>✅ Once OPNsense is installed and running, we’ll:</p><ul>
+<li>Assign LAN a temporary IP to access the web UI</li>
+<li>Log in via browser</li>
+<li>Set up <strong>bridge mode</strong> manually inside OPNsense</li>
+</ul>
+<p> Then configure <strong>bridge setup inside OPNsense</strong> next on the UI of opnsense.</p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title># 🛡️ OPNsense Transparent Firewall Lab</title>
+        <author>
+            <name>Yusuf Azeem</name>
+        </author>
+        <link href="https://yusufazeem.com/opnsense-transparent-firewall-lab.html"/>
+        <id>https://yusufazeem.com/opnsense-transparent-firewall-lab.html</id>
+
+        <updated>2025-03-25T09:13:39-04:00</updated>
+            <summary>
+                <![CDATA[
+                    A transparent firewall setup using OPNsense in bridge mode, designed to filter traffic without interfering with existing IP addressing. Ideal for lab testing red/blue team scenarios and monitoring internal network behavior. (Add screenshots here: OPNsense dashboard, firewall rules, logs, etc.) #portfolio #network-security #opnsense #homelab #firewall
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>A transparent firewall setup using OPNsense in <strong>bridge mode</strong>, designed to filter traffic without interfering with existing IP addressing. Ideal for lab testing red/blue team scenarios and monitoring internal network behavior.</p><h2 id="🔧-setup-overview">🔧 Setup Overview</h2>
+<ul>
+<li><strong>Firewall Mode</strong>: Transparent Bridge (Layer 2)</li>
+<li><strong>Hypervisor</strong>: Proxmox</li>
+<li><strong>Interfaces</strong>:<ul>
+<li>WAN: bridged to external internet</li>
+<li>LAN: bridged to internal lab VM network</li>
+</ul>
+</li>
+<li><strong>Management</strong>: Web UI via Virtual IP (e.g., 192.168.1.5)</li>
+</ul>
+<h2 id="💻-lab-hardware">💻 Lab Hardware</h2>
+<ul>
+<li>🔧 <strong>OPNsense Host</strong>: Dell OptiPlex 9020 SFF  <ul>
+<li>Intel Core i5-4570 @ 3.2GHz, 8GB RAM, 250GB HDD</li>
+</ul>
+</li>
+<li>🖥️ <strong>Proxmox Server</strong>: Dell PowerEdge R630 (bare metal)<ul>
+<li>Used to host lab VMs: Kali, Windows, Splunk, etc.</li>
+</ul>
+</li>
+<li>🌐 <strong>Remote Access</strong>: MobaXterm (SSH/VNC)</li>
+</ul>
+<h2 id="📸-screenshots">📸 Screenshots</h2>
+<blockquote>
+<p><em>(Add screenshots here: OPNsense dashboard, firewall rules, logs, etc.)</em></p></blockquote>
+<h2 id="🧪-lab-equipment">🧪 Lab Equipment</h2>
+<ul>
+<li>🖥️ <strong>Host</strong>: Windows 11</li>
+<li>🌐 <strong>VMs</strong>:<ul>
+<li>Kali Linux (Attacker)</li>
+<li>Windows 10 (Victim)</li>
+<li>OPNsense (Firewall)</li>
+</ul>
+</li>
+</ul>
+<h2 id="⚙️-key-features">⚙️ Key Features</h2>
+<ul>
+<li>IDS/IPS with Suricata</li>
+<li>GeoIP Blocking</li>
+<li>VLAN-aware filtering</li>
+<li>Logging + Insight with ELK (optional)</li>
+<li>In-line monitoring of real traffic</li>
+</ul>
+<h2 id="🧠-skills-practiced">🧠 Skills Practiced</h2>
+<ul>
+<li>Network segmentation &amp; inspection</li>
+<li>Transparent firewall concepts</li>
+<li>Alert tuning and threat detection</li>
+<li>Troubleshooting network flows</li>
+</ul>
+<h2 id="🔗-resources">🔗 Resources</h2>
+<ul>
+<li><a href="#">GitHub Lab Setup Guide</a> </li>
+<li><a href="https://docs.opnsense.org/">OPNsense Documentation</a></li>
+</ul>
+<h2 id="📌-tags">📌 Tags</h2>
+<p><code>#portfolio</code> <code>#network-security</code> <code>#opnsense</code> <code>#homelab</code> <code>#firewall</code></p>
+            ]]>
+        </content>
+    </entry>
 </feed>
